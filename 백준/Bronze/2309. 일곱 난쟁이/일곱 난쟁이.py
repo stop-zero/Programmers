@@ -1,24 +1,23 @@
+# 다른 방법
+data = []
+other_1=0
+other_2=0
 
-# 조건 : 7개를 더했을 때 100보다 작아야 한다.  
-import itertools
-
-def find_seven_dwarfs(heights):
-    # 아홉 난쟁이 중 일곱 난쟁이를 선택하는 모든 조합 확인
-    combinations = itertools.combinations(heights, 7)
-
-    for combo in combinations:
-        if sum(combo) == 100:
-            return sorted(combo)
-
-# 아홉 난쟁이의 키 입력 받기
-heights = []
 for _ in range(9):
-    height = int(input())
-    heights.append(height)
+    data.append(int(input()))
 
-# 일곱 난쟁이 찾기
-result = find_seven_dwarfs(heights)
+result = sum(data)
 
-# 결과 출력
-for height in result:
-    print(height)
+for i in range(8):
+    for j in range(i+1, 9):
+        if result-(data[i]+data[j])==100:
+            other_1=data[i]
+            other_2=data[j]
+            
+data.remove(other_1)
+data.remove(other_2)
+
+data.sort()
+
+for i in data:
+    print(i)
