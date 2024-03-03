@@ -1,4 +1,6 @@
-N, M = map(int, input().split())
+# 오름차순 정렬
+# 카드들 중에서 3장을 선택하여 만들 수 있는 합 구하기
+# 이 값들 중에서 M을 넘지 않으면서 최대한 M에 가까운 값 찾기N, M = map(int, input().split())
 cards = list(map(int, input().split()))
 
 cards.sort()
